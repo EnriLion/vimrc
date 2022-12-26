@@ -7,5 +7,5 @@ if [[ "$system" == *"microsoft"* ]]; then
 elif [[ "$system" == *"linux"* ]]; then
     echo "Operating System = Linux"
 else
-    echo "I am unable to determine the operating system you are using."
+    echo "Operating System = Unknown"
 fi

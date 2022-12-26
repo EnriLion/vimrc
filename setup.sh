@@ -1,14 +1,11 @@
 #!/bin/bash
+system=$(uname -r)
 
-## Which operating system we are using variable
-host=$(cat /proc/sys/kernel/hostname)
-OS=$(uname -s)
-if [ "${OS}" = "Linux" ] ; then
-	echo "operating system: WSL(Windows Subsystem Linux)"
-	echo "hostname: " $host
+# Check the operating system
+if [[ "$system" == *"microsoft"* ]]; then
+    echo "Operating System = WSL" 
+elif [[ "$system" == *"linux"* ]]; then
+    echo "Operating System = Linux"
 else
-  echo "operating system: UNKWOWN"	
-  echo "hostname: " $host
+    echo "I am unable to determine the operating system you are using."
 fi
- 
-

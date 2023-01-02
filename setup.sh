@@ -62,13 +62,13 @@ fi
 if [[ "$system" == *"microsoft"* ]]; then
     echo "Operating System = WSL" 
     existvimrc 
-    overwritevim
  
     #Create the file and settings
  touch ~/.vimrc
 
 elif [[ "$system" == *"linux"* ]]; then
     echo "Operating System = Linux"
+    existvimrc
 
     #Create the file and settings
  touch ~/.vimrc

@@ -27,7 +27,7 @@ syntax on
 colorscheme onedark
 
 
-"Settings onedark.vim
+"Settings lightline.vim
 set noshowmode
 set laststatus=2
 

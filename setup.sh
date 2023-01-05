@@ -1,8 +1,37 @@
 #!/bin/bash
 
+## Author : Enrique Lion
+
 system=$(uname -r)
 
-#function to install vim plug
+## vimrc-style installer script
+
+## ANSI Colors (FG & BG)
+
+
+## Banner
+
+banner () {
+	clear
+	echo "
+
+██╗░░░██╗██╗███╗░░░███╗██████╗░░█████╗░
+██║░░░██║██║████╗░████║██╔══██╗██╔══██╗
+╚██╗░██╔╝██║██╔████╔██║██████╔╝██║░░╚═╝
+░╚████╔╝░██║██║╚██╔╝██║██╔══██╗██║░░██╗
+░░╚██╔╝░░██║██║░╚═╝░██║██║░░██║╚█████╔╝
+░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚════╝░
+
+░██████╗████████╗██╗░░░██╗██╗░░░░░███████╗░██████╗
+██╔════╝╚══██╔══╝╚██╗░██╔╝██║░░░░░██╔════╝██╔════╝
+╚█████╗░░░░██║░░░░╚████╔╝░██║░░░░░█████╗░░╚█████╗░
+░╚═══██╗░░░██║░░░░░╚██╔╝░░██║░░░░░██╔══╝░░░╚═══██╗
+██████╔╝░░░██║░░░░░░██║░░░███████╗███████╗██████╔╝
+╚═════╝░░░░╚═╝░░░░░░╚═╝░░░╚══════╝╚══════╝╚═════╝░
+"	
+
+}
+## Prerequisites
 
 function plug {
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -13,29 +42,9 @@ function plug {
 #function overwritevim
 
 function overwritevim {
-	cat > .vimrc
-	"Vim configuration
-	set number
-	"Vim-Plug
-	call plug#begin('~/.vim/plugged')
-
-	Plug 'wakatime/vim-wakatime'
-
-	Plug 'mattn/emmet-vim'
-
-	Plug 'joshdick/onedark.vim'
-
-	Plug'itchyny/lightline.vim'
-
-	Plug '907th/vim-auto-save'
-
-	#Plug 'preservim/nerdtree'
-
-        #Plug 'ryanoasis/vim-devicons' 
-
-	call plug#end()
-
-}
+ 	echo "overwrite vim"	
+	
+	}
 
 
 
@@ -43,36 +52,39 @@ function overwritevim {
 
 function existvimrc {
 
-if test ! -f /home/$USER ; then
-      overwritevim
-else
-    touch /home/$USER/.vimrc
-    overwritevim
+	if test ! -f /home/$USER ; then
+	      overwritevim
+	else
+	    touch /home/$USER/.vimrc
+	    overwritevim
 
-
-
-fi
+	fi
 
 }
 
+## Main 
+main() {
+	banner
 
-
-
-# Check the operating system
-if [[ "$system" == *"microsoft"* ]]; then
-    echo "Operating System = WSL" 
-    existvimrc 
+	if [[ "$system" == *"microsoft"* ]]; then
+    		echo "Operating System = WSL" 
+		    existvimrc 
  
-    #Create the file and settings
- touch ~/.vimrc
+		 touch ~/.vimrc
 
-elif [[ "$system" == *"linux"* ]]; then
-    echo "Operating System = Linux"
-    existvimrc
+	elif [[ "$system" == *"linux"* ]]; then
+	    echo "Operating System = Linux"
+	    existvimrc
 
-    #Create the file and settings
- touch ~/.vimrc
+	    #Create the file and settings
+		 touch ~/.vimrc
 
-else
-    echo "Operating System = Unknown"
-fi
+	else
+	    echo "Operating System = Unknown"
+	fi
+
+
+}
+
+main
+

@@ -4,6 +4,7 @@ endfunction
 
 "Settings vim
 set nocompatible
+set number
 set relativenumber 
 
 "Vim Plug Loading

@@ -33,7 +33,7 @@ banner () {
 }
 ## Prerequisites
 
-function plug {
+function plug() {
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -41,7 +41,7 @@ function plug {
 
 #function overwritevim
 
-function overwritevim {
+function overwritevim() {
  	echo "overwrite vim"	
 	
 	}
@@ -56,7 +56,10 @@ function existvimrc {
 	      overwritevim
 	else
 	    touch /home/$USER/.vimrc
-	    overwritevim
+	    echo "What type of configuration are you using for your vim"
+	    echo "a)Everything in one(All plugins and vim tweaks on your .vimrc for your development environment)"
+	    echo "b)Web Development"
+	    echo "c)Python Development"
 
 	fi
 

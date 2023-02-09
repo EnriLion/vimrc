@@ -3,6 +3,7 @@ function! Changenumbers()
 endfunction
 
 "Settings vim
+set encoding=UTF-8
 set nocompatible
 set number
 set relativenumber 
@@ -30,10 +31,17 @@ call plug#begin('~/.vim/plugged')
 
 
 "Vim commentary plugin
+"Vim ripgrep search tool
+
+
+	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf.vim'
 
 	Plug 'maxmellon/vim-jsx-pretty'
 
 	Plug 'yuezk/vim-js'
+
+	Plug 'ryanoasis/vim-devicons'
 
 	
 call plug#end()
@@ -86,7 +94,15 @@ let g:ale_sign_warning = '!'
 
 "Vim using prettier
 
-" when running at every change you may want to disable quickfix
+"using prettier as default
+
 let g:prettier#quickfix_enabled = 0
 
+
+
 autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+
+
+"Settings fzf finder
+
+

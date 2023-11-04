@@ -21,7 +21,7 @@ call plug#begin('~/.vim/autoload')
         Plug 'junegunn/fzf'    
         Plug 'hdima/python-syntax'
         Plug 'junegunn/fzf.vim'
-        "vim commentary"
+        PLug 'https://github.com/tpope/vim-commentary'
         Plug '907th/vim-auto-save'
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
         Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }

@@ -228,6 +228,6 @@ function! ExecuteFile()
     endif
 endfunction
 
-nnoremap <C-p> :call ExecuteFile() <Cr>
-nnoremap <C-k> :!kotlinc % -include-runtime -d %c_name.jar ; java -jar %c_name.jar<Cr>
-nnoremap <C-s> :q <Cr>
+nnoremap <silent> <C-p> :call ExecuteFile() <Cr>
+nnoremap <silent> <C-k> :!kotlinc % -include-runtime -d %c_name.jar ; java -jar %c_name.jar<Cr>
+nnoremap <silent> <C-s> :q <Cr>
